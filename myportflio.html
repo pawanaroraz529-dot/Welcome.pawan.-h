@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pawan kumar | AI/ML Engineer & Full-Stack Developer</title>
+    <meta name="description"
+        content="Portfolio of pawan kumar, an AI/ML Engineer specializing in Large Language Models, Computer Vision, and scalable AI solutions.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050505',
+                        card: 'rgba(17, 17, 17, 0.8)',
+                        primary: '#6366f1',
+                        secondary: '#a855f7',
+                        accent: '#06b6d4',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #050505;
+            color: #e5e7eb;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #6366f1, #a855f7, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-border:hover {
+            border-image: linear-gradient(to right, #6366f1, #a855f7) 1;
+        }
+
+        .blob {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(99, 102, 241, 0.15);
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: #6366f1;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        input,
+        textarea {
+            background: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #6366f1 !important;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+    <!-- Background Blobs -->
+    <div class="blob top-20 left-10"></div>
+    <div class="blob bottom-20 right-10" style="background: rgba(168, 85, 247, 0.15);"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold gradient-text">ALEX.DEV</a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-white" id="menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden glass absolute w-full flex flex-col items-center py-6 space-y-4 border-t border-white/10">
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#skills" class="mobile-link">Skills</a>
+            <a href="#projects" class="mobile-link">Projects</a>
+            <a href="#experience" class="mobile-link">Experience</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-indigo-500 font-semibold tracking-widest uppercase mb-4">Available for new opportunities
+                </h2>
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-6">Hi, I'm <span class="gradient-text">Pawan
+                        Kumar</span></h1>
+                <p class="text-xl text-gray-400 mb-8 leading-relaxed">
+                    I want to become a web developer and am currently learning; alongside that, I am learning C
+                    programming—I have already mastered the basics of C and am now learning C++.
+                </p>
+                <div class="flex flex-wrap gap-4 mb-10">
+                    <a href="#projects"
+                        class="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 rounded-full font-bold transition flex items-center shadow-lg shadow-indigo-500/20">
+                        View Projects <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                    </a>
+                    <a href="#"
+                        class="px-8 py-4 glass hover:bg-white/10 rounded-full font-bold transition flex items-center">
+                        Download Resume <i data-lucide="download" class="ml-2 w-5 h-5"></i>
+                    </a>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/pawankumar" class="text-gray-400 hover:text-white transition"><i
+                            data-lucide="github"></i></a>
+                    <a href="https://linkedin.com/in/pawankumar" class="text-gray-400 hover:text-white transition"><i
+                            data-lucide="linkedin"></i></a>
+                    <a href="https://twitter.com/pawan" class="text-gray-400 hover:text-white transition"><i
+                            data-lucide="twitter"></i></a>
+                </div>
+            </div>
+            <div class="relative flex justify-center" data-aos="fade-left">
+                <div
+                    class="w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden glass p-2 rotate-3 hover:rotate-0 transition duration-500">
+                    <img src="profile.jpg"
+                        alt="Profile" class="w-full h-full object-cover rounded-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white/5">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">Personal Mission</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-start" data-aos="fade-up">
+                    <div class="text-gray-400 leading-relaxed space-y-4">
+                        <p>
+                            I am a BCA student embarking on my journey to become a web developer; I am currently
+                            learning the craft and have also developed technical communication skills. I have mastered C
+                            (basics), C++, Python, JavaScript, Kali Linux, website development, AI engineering prompts,
+                            and professional communication. My dream is to become a full-stack backend web developer.
+                        </p>
+                        <p>
+                            Currently, I am focused on Retrieval-Augmented Generation (RAG) and Fine-tuning Large
+                            Language Models to help enterprises leverage their private data securely. I believe the best
+                            AI is the one that works seamlessly in the background to improve human lives.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="glass p-6 rounded-2xl text-center">
+                            <h3 class="text-3xl font-bold text-indigo-500">6month +</h3>
+                            <p class="text-sm text-gray-400">month Experience</p>
+                        </div>
+                        <div class="glass p-6 rounded-2xl text-center">
+                            <h3 class="text-3xl font-bold text-purple-500">24+</h3>
+                            <p class="text-sm text-gray-400">Models Deployed</p>
+                        </div>
+                        <div class="glass p-6 rounded-2xl text-center">
+                            <h3 class="text-3xl font-bold text-cyan-500">6</h3>
+                            <p class="text-sm text-gray-400">Open Source Contribs</p>
+                        </div>
+                        <div class="glass p-6 rounded-2xl text-center">
+                            <h3 class="text-3xl font-bold text-pink-500">Top 0.01%</h3>
+                            <p class="text-sm text-gray-400">Kaggle Contributor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-16 text-center" data-aos="fade-up">Technical Toolbox</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                <div class="glass p-6 rounded-2xl hover:border-indigo-500/50 transition group text-center"
+                    data-aos="zoom-in">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                        class="w-12 h-12 mx-auto mb-4" alt="Python">
+                    <h4 class="font-bold">Python / C++</h4>
+                </div>
+                <div class="glass p-6 rounded-2xl hover:border-indigo-500/50 transition group text-center"
+                    data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+                        class="w-12 h-12 mx-auto mb-4" alt="ML">
+                    <h4 class="font-bold">PyTorch / Jax</h4>
+                </div>
+                <div class="glass p-6 rounded-2xl hover:border-indigo-500/50 transition group text-center"
+                    data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-indigo-500/10 rounded-lg">
+                        <i data-lucide="eye" class="text-indigo-500"></i>
+                    </div>
+                    <h4 class="font-bold">Computer Vision</h4>
+                </div>
+                <div class="glass p-6 rounded-2xl hover:border-indigo-500/50 transition group text-center"
+                    data-aos="zoom-in" data-aos-delay="300">
+                    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-purple-500/10 rounded-lg">
+                        <i data-lucide="cpu" class="text-purple-500"></i>
+                    </div>
+                    <h4 class="font-bold">LLM Ops / RAG</h4>
+                </div>
+                <div class="glass p-6 rounded-2xl hover:border-indigo-500/50 transition group text-center"
+                    data-aos="zoom-in" data-aos-delay="400">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                        class="w-12 h-12 mx-auto mb-4" alt="React">
+                    <h4 class="font-bold">React / Next.js</h4>
+                </div>
+                <!-- Row 2 -->
+                <div class="glass p-6 rounded-2xl hover:border-indigo-500/50 transition group text-center"
+                    data-aos="zoom-in">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                        class="w-12 h-12 mx-auto mb-4" alt="TS">
+                    <h4 class="font-bold">TypeScript</h4>
+                </div>
+                <div class="glass p-6 rounded-2xl hover:border-indigo-500/50 transition group text-center"
+                    data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                        class="w-12 h-12 mx-auto mb-4" alt="SQL">
+                    <h4 class="font-bold">Vector DBs</h4>
+                </div>
+                <div class="glass p-6 rounded-2xl hover:border-indigo-500/50 transition group text-center"
+                    data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+                        class="w-12 h-12 mx-auto mb-4" alt="AWS">
+                    <h4 class="font-bold">AWS / GCP</h4>
+                </div>
+                <div class="glass p-6 rounded-2xl hover:border-indigo-500/50 transition group text-center"
+                    data-aos="zoom-in" data-aos-delay="300">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                        class="w-12 h-12 mx-auto mb-4" alt="Docker">
+                    <h4 class="font-bold">Kubernetes</h4>
+                </div>
+                <div class="glass p-6 rounded-2xl hover:border-indigo-500/50 transition group text-center"
+                    data-aos="zoom-in" data-aos-delay="400">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
+                        class="w-12 h-12 mx-auto mb-4" alt="API">
+                    <h4 class="font-bold">FastAPI</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-white/5">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-16 text-center" data-aos="fade-up">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="glass rounded-3xl overflow-hidden group" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
+                            alt="Project 1"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-3">EcoVision: Crop Disease Detection</h3>
+                        <p class="text-gray-400 mb-6 text-sm">Real-time mobile inference model using EfficientNetV2 to
+                            identify 38 types of plant diseases with 99.2% accuracy.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs">PyTorch</span>
+                            <span class="px-3 py-1 bg-purple-500/10 text-purple-400 rounded-full text-xs">TensorFlow
+                                Lite</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-sm font-bold flex items-center hover:text-indigo-400 transition"><i
+                                    data-lucide="github" class="mr-2 w-4 h-4"></i> Code</a>
+                            <a href="#" class="text-sm font-bold flex items-center hover:text-indigo-400 transition"><i
+                                    data-lucide="external-link" class="mr-2 w-4 h-4"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="glass rounded-3xl overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1675271591211-126ad94e495d?auto=format&fit=crop&q=80&w=800"
+                            alt="Project 2"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-3">LegalSense RAG Engine</h3>
+                        <p class="text-gray-400 mb-6 text-sm">An enterprise-grade document search engine using Llama 3
+                            and Pinecone for semantic retrieval of legal contracts.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs">LangChain</span>
+                            <span
+                                class="px-3 py-1 bg-purple-500/10 text-purple-400 rounded-full text-xs">Pinecone</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-sm font-bold flex items-center hover:text-indigo-400 transition"><i
+                                    data-lucide="github" class="mr-2 w-4 h-4"></i> Code</a>
+                            <a href="#" class="text-sm font-bold flex items-center hover:text-indigo-400 transition"><i
+                                    data-lucide="external-link" class="mr-2 w-4 h-4"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="glass rounded-3xl overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
+                            alt="Project 3"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-3">Predictive Maintenance Hub</h3>
+                        <p class="text-gray-400 mb-6 text-sm">IoT dashboard for industrial sensors using LSTM networks
+                            to predict hardware failure 48 hours in advance.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs">Scikit-Learn</span>
+                            <span class="px-3 py-1 bg-purple-500/10 text-purple-400 rounded-full text-xs">Next.js</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-sm font-bold flex items-center hover:text-indigo-400 transition"><i
+                                    data-lucide="github" class="mr-2 w-4 h-4"></i> Code</a>
+                            <a href="#" class="text-sm font-bold flex items-center hover:text-indigo-400 transition"><i
+                                    data-lucide="external-link" class="mr-2 w-4 h-4"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl font-bold mb-16 text-center" data-aos="fade-up">Professional Journey</h2>
+            <div class="space-y-12">
+                <!-- Exp Item -->
+                <div class="relative pl-8 border-l-2 border-indigo-500/30" data-aos="fade-left">
+                    <div
+                        class="absolute w-4 h-4 bg-indigo-500 rounded-full -left-[9px] top-1 shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+                    </div>
+                    <span class="text-indigo-400 font-bold">2022 - Present</span>
+                    <h3 class="text-2xl font-bold mt-1">Senior AI Engineer</h3>
+                    <p class="text-gray-300 font-medium">NeuralStream Technologies</p>
+                    <p class="text-gray-400 mt-4">Architecting scalable ML pipelines on AWS SageMaker. Reduced inference
+                        latency by 45% using TensorRT optimization and implemented a company-wide RAG system for
+                        knowledge management.</p>
+                </div>
+                <!-- Exp Item -->
+                <div class="relative pl-8 border-l-2 border-indigo-500/30" data-aos="fade-left" data-aos-delay="100">
+                    <div
+                        class="absolute w-4 h-4 bg-purple-500 rounded-full -left-[9px] top-1 shadow-[0_0_15px_rgba(168,85,247,0.5)]">
+                    </div>
+                    <span class="text-purple-400 font-bold">2020 - 2022</span>
+                    <h3 class="text-2xl font-bold mt-1">Full-Stack ML Developer</h3>
+                    <p class="text-gray-300 font-medium">DataPoint Systems</p>
+                    <p class="text-gray-400 mt-4">Developed end-to-end computer vision applications for retail
+                        analytics. Managed a React-based dashboard and integrated it with Flask-based ML microservices.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Education & Certs -->
+            <div class="mt-24 grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-up">
+                    <h3 class="text-2xl font-bold mb-8 flex items-center"><i data-lucide="graduation-cap"
+                            class="mr-4 text-indigo-500"></i> Education</h3>
+                    <div class="glass p-6 rounded-2xl">
+                        <h4 class="font-bold">M.S. in Computer Science (AI Track)</h4>
+                        <p class="text-gray-400 text-sm">Stanford University, 2018 - 2020</p>
+                        <p class="text-indigo-400 text-sm mt-2">Specialization in Deep Learning</p>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-2xl font-bold mb-8 flex items-center"><i data-lucide="award"
+                            class="mr-4 text-purple-500"></i> Certifications</h3>
+                    <div class="glass p-6 rounded-2xl space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium">Deep Learning Specialization</span>
+                            <span class="text-xs text-gray-500">DeepLearning.AI</span>
+                        </div>
+                        <div class="flex justify-between items-center border-t border-white/5 pt-4">
+                            <span class="text-sm font-medium">AWS Certified Machine Learning – Specialty</span>
+                            <span class="text-xs text-gray-500">Amazon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section class="py-24 bg-gradient-to-b from-transparent to-indigo-900/10">
+        <div class="container mx-auto px-6 text-center">
+            <div class="glass p-12 rounded-[3rem] max-w-3xl mx-auto" data-aos="zoom-in">
+                <h2 class="text-4xl font-bold mb-6">Need an AI expert?</h2>
+                <p class="text-gray-400 mb-10 text-lg">I'm available for consulting, freelance AI development, and
+                    full-time senior roles.</p>
+                <a href="#"
+                    class="inline-flex items-center px-10 py-5 bg-white text-dark rounded-full font-bold hover:bg-indigo-500 hover:text-white transition duration-300">
+                    Get My Full Resume <i data-lucide="file-text" class="ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-bold mb-6">Get in touch</h2>
+                    <p class="text-gray-400 mb-8 text-lg">Whether you have a project idea or just want to chat about the
+                        latest in Generative AI, my inbox is always open.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 glass rounded-full flex items-center justify-center text-indigo-500">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <p class="text-lg">alex.rivera.dev@gmail.com</p>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 glass rounded-full flex items-center justify-center text-purple-500">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <p class="text-lg">San Francisco, CA</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="glass p-8 rounded-3xl space-y-6" data-aos="fade-left">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Name</label>
+                        <input type="text" placeholder="Your Name" class="w-full p-4 rounded-xl text-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Email</label>
+                        <input type="email" placeholder="your@email.com" class="w-full p-4 rounded-xl text-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Message</label>
+                        <textarea rows="4" placeholder="Tell me about your project..."
+                            class="w-full p-4 rounded-xl text-white"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full py-4 bg-indigo-600 hover:bg-indigo-700 rounded-xl font-bold transition">Send
+                        Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="text-center md:text-left mb-6 md:mb-0">
+                <h3 class="text-2xl font-bold gradient-text">ALEX RIVERA</h3>
+                <p class="text-gray-500 mt-2">© 2026 Portfolio. Building the future with code and neurons.</p>
+            </div>
+            <div class="flex space-x-8 mb-6 md:mb-0">
+                <a href="https://github.com/alexrivera" class="text-gray-400 hover:text-white transition"><i
+                        data-lucide="github"></i></a>
+                <a href="https://linkedin.com/in/alexrivera" class="text-gray-400 hover:text-white transition"><i
+                        data-lucide="linkedin"></i></a>
+                <a href="https://twitter.com/alexrivera" class="text-gray-400 hover:text-white transition"><i
+                        data-lucide="twitter"></i></a>
+            </div>
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                class="w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-indigo-500 transition group">
+                <i data-lucide="chevron-up" class="group-hover:-translate-y-1 transition"></i>
+            </button>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Initialize Animations
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+        });
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => menu.classList.add('hidden'));
+        });
+    </script>
+</body>
+
+</html>
